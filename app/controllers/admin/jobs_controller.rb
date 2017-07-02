@@ -1,6 +1,7 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_action :require_is_admin
+
   layout "admin"
 
   def show
@@ -13,7 +14,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def index
-    @job = Job.all
+    @jobs = Job.all
   end
 
   def new
