@@ -7,7 +7,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def index
-    @job = Job.all
+    @jobs = Job.all
   end
 
   def new
@@ -20,7 +20,7 @@ class Admin::JobsController < ApplicationController
     if @job.save
       redirect_to admin_jobs_path
     else
-      render :newß
+      render :new
     end
   end
 
